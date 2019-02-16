@@ -1,4 +1,5 @@
 <template>
+	<!--  07.编写页面用户名+评论内容+提交按钮代码 -->
 	<div class="col-md-4">
 	  <form class="form-horizontal">
 	    <div class="form-group">
