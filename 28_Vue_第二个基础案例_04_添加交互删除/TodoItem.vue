@@ -45,9 +45,7 @@
 				const {todo, index, deleteTodo} = this
 				if(window.confirm(`确认删除${todo.title}吗？`)){
 					//01_12调用删除条目函数
-					deleteTodo(todo.title)
-				}else{
-					
+					deleteTodo(index)
 				}
 			}
 		}
