@@ -10,7 +10,7 @@ export default {
 		commit(ADD_TODO, {todo})
 		},
 	//02_3.提交mutation请求。
-	DELETE_TODO({commit}, index){
+	delete_todo({commit}, index){
 		commit(DELETE_TODO, {index})//传递参数的数据类型，一定要是对象。必须加上{}
 		},
 }
