@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_Vue_模板语法</title>
+</head>
+<body>
+<div id="app">
+	<!--01_1.演示双大括号表达式-->
+	<h2>1. 双大括号表达式</h2>
+	<p>{{msg}}</p><!--仅识别为纯文本格式-->
+	<p>{{msg.toUpperCase()}}</p><!--仅识别为纯文本格式-->
+	<p v-text="msg"></p><!--仅识别为纯文本格式-->
+	<p v-html="msg"></p><!--可识别url超链接-->
+	
+	<h2>2. 指令一：强制数据绑定</h2>
+	<img v-bind:src="img" />
+	<!--通常使用简写形式，省略v-bind，只增加冒号-->
+	<img :src="img" />
+	<!--02_1.演示指令二：绑定事件监听-->
+	<h2>3. 指令二：绑定事件监听</h2>
+	<button v-on:click="test">test123</button>
+	<!--通常使用简写形式，省略v-on，只增加@符号-->
+	<button @click="test">test123</button>
+	<button @click="test123('演示指令二：绑定事件监听')">test123</button>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.min.js"></script>
+<script type="text/javascript">
+
+  const vm = new Vue({ 
+    el: '#app', 
+    data: {
+			//01.演示双大括号表达式
+      msg:'<a href="https://github.com/samsunga3888/Vue_Learning-notes">hello World!</a>',
+			img:'https://cn.vuejs.org/images/logo.png'
+    },
+		//02.演示指令二：绑定事件监听
+		methods:{
+			test(){
+				alert('演示指令二：绑定事件监听')
+			},
+			test123(value){
+				alert(value)
+			}
+		}
+  })
+</script>
+</body>
+</html>
+
+

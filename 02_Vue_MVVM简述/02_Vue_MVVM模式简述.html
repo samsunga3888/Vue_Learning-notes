@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_Vue_MVVM模式简述</title>
+</head>
+<body>
+<div id="app">
+	
+  <input type="text" v-model="msg"><br>
+	
+  <p>hello {{msg}}</p>
+</div>
+<!--
+MVVM:
+model:模型，数据对象（data）
+view:视图，模型页面（用于显示数据）
+viewModel:视图模型（vue的实例 vm）
+-->
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.min.js"></script>
+<script type="text/javascript">
+
+  const vm = new Vue({ 
+    el: '#app', 	
+    data: {
+      msg: ''
+    }
+  })
+</script>
+
+</body>
+</html>
+
+
