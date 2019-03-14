@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05_Vue_监视</title>
+</head>
+<body>
+	<div id="demo">
+	  姓: <input type="text" placeholder="First Name" v-model="firstName"><br>
+	  名: <input type="text" placeholder="Last Name" v-model="lastName"><br>
+	  姓名1(单向): <input type="text" placeholder="Full Name1"  v-model="fullName1"><br>
+	  <!--01.绑定v-model模块-->
+	  姓名2(单向): <input type="text" placeholder="Full Name2" v-model="fullName2"><br>
+	  姓名3(双向): <input type="text" placeholder="Full Name3" ><br>
+
+	  
+	</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.min.js"></script>
+<script type="text/javascript">
+  const vm = new Vue({
+    el: '#demo',
+    data: {
+	  firstName:'A',
+	  lastName:'B',
+	  //01_1.初始化页面需要显示的数据
+	  fullName2:'A B'
+    },
+	computed:{
+		fullName1(){
+			return this.firstName+' '+this.lastName
+		}
+	},
+	watch:{
+		//01_2.通过watch功能,监视firstName的变化
+		firstName:function(value){
+			this.fullName2 = value+' '+this.lastName
+		}
+	}
+})
+
+//01_3.watch监视的第二种用法
+vm.$watch('lastName', function(value){
+	this.fullName2 = this.firstName+' '+value
+})
+
+
+</script>
+</body>
+</html>

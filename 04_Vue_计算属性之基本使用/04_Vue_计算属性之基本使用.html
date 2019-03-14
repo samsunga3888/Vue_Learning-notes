@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_Vue_计算属性之基本使用</title>
+</head>
+<body>
+	<!--01.编写静态页面-->
+	<div id="demo">
+		<!--01_1.绑定v-model模块-->
+	  姓: <input type="text" placeholder="First Name" v-model="firstName"><br>
+	  名: <input type="text" placeholder="Last Name" v-model="lastName"><br>
+	  <!--02.绑定v-model模块-->
+	  姓名1(单向): <input type="text" placeholder="Full Name1"  v-model="fullName1"><br>
+	  姓名2(单向): <input type="text" placeholder="Full Name2" ><br>
+	  姓名3(双向): <input type="text" placeholder="Full Name3" ><br>
+
+	  
+	</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.min.js"></script>
+<script type="text/javascript">
+  const vm = new Vue({
+    el: '#demo',
+    data: {
+      //01_2.初始化页面需要显示的数据
+	  firstName:'A',
+	  lastName:'B'
+    },
+	computed:{
+		//02_1.计算页面需要显示的数据
+		fullName1(){
+			return this.firstName+' '+this.lastName
+		}
+	}
+
+})
+</script>
+</body>
+</html>
