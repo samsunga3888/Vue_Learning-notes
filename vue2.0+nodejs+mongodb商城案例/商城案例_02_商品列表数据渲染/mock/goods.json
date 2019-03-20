@@ -1,0 +1,23 @@
+{
+	"status":"0",
+	"result":[
+		{
+			"productId":"100001",
+			"productName":"音响",
+			"productPrice":199,
+			"productImg":"1.jpg"
+		},
+		{
+			"productId":"100002",
+			"productName":"水龙头",
+			"productPrice":299,
+			"productImg":"2.jpg"
+		},
+		{
+			"productId":"100001",
+			"productName":"耳机",
+			"productPrice":499,
+			"productImg":"3.jpg"
+		}
+	]
+}
