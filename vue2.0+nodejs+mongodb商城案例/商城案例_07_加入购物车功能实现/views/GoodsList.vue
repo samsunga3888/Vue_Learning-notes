@@ -177,8 +177,9 @@
 			addCart(productId){
 				axios.post("/goods/addCart",{
 					productId:productId,
-				}).then((res)=>{
-					if(res.status==200){
+				}).then((response)=>{
+					let res = response.data;
+					if(res.status=="0"){
 						alert("加入成功");
 					}else{
 						alert("msg:"+res.msg);
